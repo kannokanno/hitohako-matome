@@ -28,6 +28,12 @@
     <div v-else>
       <h4><i class="search olive icon"></i>調べたい開催地を選択してください</h4>
       <div id="matome-prefectures" class="ui massive list">
+        <div class="item">
+          <h3 class="header">絞り込みなし(全国)</h3>
+          <div class="description ui four buttons">
+            <button class="ui blue button matome-prefecture" v-bind:class="prefectureActiveClass('全国')" @click="onPrefecturesChange('全国')">全国</button>
+          </div>
+        </div>
         <div v-for="(prefectures, groupName) in selectablePrefectures" class="item">
           <h3 class="header">{{ groupName }}</h3>
           <div class="description ui four buttons">
@@ -51,7 +57,7 @@
           <div class="ui divided very relaxed list">
             <a class="matome-event-item item" v-for="event in eventsOfDate" v-bind:href="event.url" target="_blank">
               <div class="matome-event-name">{{ event.name }}</div>
-              <div class="matome-event-meta">{{ event.city }} | {{ event.startTime }} - {{ event.endTime }}</div>
+              <div class="matome-event-meta">{{ event.prefecture }} | {{ event.city }} | {{ event.startTime }} - {{ event.endTime }}</div>
             </a>
           </div>
         </div>
@@ -61,7 +67,7 @@
   </transition>
 
   <div id="matome-contact-forms">
-    <h4 class="ui header"><i class="edit icon"></i>サイトへの追加や修正を依頼する(準備中)</h4>
+    <h4 class="ui header"><i class="edit icon"></i>まとめの追加や修正を依頼する(準備中)</h4>
     <div class="ui segment">
       <div class="ui divided very relaxed list">
         <a class="item disabled" href="" target="_blank">古本市の情報を追加する</a>
