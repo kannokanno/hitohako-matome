@@ -3,8 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>一箱古本市まとめ</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.css">
 </head>
 <body>
-Hello 古本市
+<div id="app" class="ui very padded container">
+  <h3 class="ui block header">
+    {{ prefecture }}で開催される一箱古本市
+  </h3>
+
+  開催地を絞り込む： <select v-model="prefecture" @change="onPrefecturesChange($event)">
+    <option value="東京">東京</option>
+    <option value="大阪">大阪</option>
+  </select>
+
+  <div class="ui relaxed divided large list">
+    <div class="item" v-for="event in events">
+      <div class="content">
+        <a class="header">{{ event.date }} {{ event.startTime }} - {{ event.endTime }}</a>
+        <div class="description">{{ event.name }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="./events.js"></script>
+<script src="./main.js"></script>
 </body>
 </html>
