@@ -31,7 +31,7 @@ function getAllEvents() {
     { prefecture: '千葉', city: '西千葉', name: '第７回 西千葉一箱古本市', url: 'https://www.facebook.com/events/hello-garden/第７回-西千葉一箱古本市/337057203626310/', date: '11月16日(土)', startTime: '10:30', endTime: '15:00'},
     { prefecture: '静岡', city: '掛川西', name: 'ざっくり古本市', url: 'https://www.facebook.com/toda.saigo/photos/tですさて半年に一度のざっくり古本市のご案内です11月16日土は戸田書店掛川西郷店の軒下にて第11回の古本市が開催されます本日より出店者募集します本以外の販売も/1645810188889589/', date: '11月16日(土)', startTime: '10:00', endTime: '16:30'},
     { prefecture: '岩手', city: '盛岡', name: '第５回 浜藤古本市', url: 'http://machiya.iwate-arts.jp/?event=%e7%ac%ac5%e5%9b%9e-%e6%b5%9c%e8%97%a4%e5%8f%a4%e6%9c%ac%e5%b8%82', date: '11月17日(日)', startTime: '11:00', endTime: '16:00'},
-    { prefecture: '東京', city: '雑司ケ谷', name: 'みちくさ市', url: 'https://kmstreet.exblog.jp/13452016/', date: '11月17日(日)', startTime: '11:00', endTime: '16:00'},
+    { prefecture: '東京', city: '雑司ケ谷', name: '鬼子母神通りみちくさ市', url: 'https://kmstreet.exblog.jp/13452016/', date: '11月17日(日)', startTime: '11:00', endTime: '16:00'},
     { prefecture: '千葉', city: '佐倉', name: '佐倉城下町一箱古本市', url: 'https://twitter.com/sakurahitohako/status/1181176826846040064', date: '11月17日(日)', startTime: '10:00', endTime: '15:00'},
     { prefecture: '岐阜', city: '中津川', name: '本や+α 一箱古本市', url: 'http://poppinz-nico2.com/honya-plus-alpha/2019/10/08/%e7%ac%ac%ef%bc%93%e5%9b%9e%e4%b8%80%e7%ae%b1%e5%8f%a4%e6%9c%ac%e5%b8%82%ef%bc%9c%e5%87%ba%e5%ba%97%e8%80%85%e3%81%95%e3%82%93%e5%8b%9f%e9%9b%86%e4%b8%ad%ef%bc%9e/?preview=true', date: '11月17日(日)', startTime: '10:00', endTime: '17:00'},
     { prefecture: '兵庫', city: '神戸', name: '和田岬一箱古本市', url: 'https://twitter.com/wadamisaki2019/status/1185418573985894400', date: '11月17日(日)', startTime: '10:00', endTime: '16:00'},
