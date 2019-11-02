@@ -2,33 +2,90 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>一箱古本市まとめ</title>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 <body>
-<div id="app" class="ui very padded container">
-  <h3 class="ui block header">
-    {{ prefecture }}で開催される一箱古本市
-  </h3>
+<header>
+  <h2 class="ui header">
+    <img src="/logo.png" class="ui circular image">
+    <div class="content">
+      一箱古本市まとめ
+      <div class="sub header">古本市の公式サイトをまとめています</div>
+    </div>
+  </h2>
+</header>
+<div id="app">
+  <div id="matome-prefecture-container">
+    <div v-if="isCollapsePrefecture">
+      <div class="ui olive segment">
+        <i class="search icon"></i>{{ prefecture }}：<b>{{ events.length }}</b>件の開催予定
+        <button id="matome-reset" class="ui basic button" @click="onResetPrefectures()"><i class="circle times icon"></i>やり直す</button>
+      </div>
+    </div>
+    <div v-else>
+      <h4><i class="search olive icon"></i>調べたい開催地を選択してください</h4>
+      <div id="matome-prefectures" class="ui massive list">
+        <div v-for="(prefectures, groupName) in selectablePrefectures" class="item">
+          <h3 class="header">{{ groupName }}</h3>
+          <div class="description ui four buttons">
+            <button v-for="prefecture in prefectures" class="ui blue button matome-prefecture"
+                    v-bind:class="prefectureActiveClass(prefecture)" @click="onPrefecturesChange(prefecture)">{{ prefecture }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  開催地を絞り込む： <select v-model="prefecture" @change="onPrefecturesChange($event)">
-    <option value="東京">東京</option>
-    <option value="大阪">大阪</option>
-  </select>
+  <transition name="fade">
+    <div v-if="prefecture !== ''">
+      <div v-if="events.length > 0">
+        <div class="ui info message">
+          <i class="exclamation triangle icon"></i>表示内容は当サイト登録時の情報です。<br>
+          最新はリンク先の公式情報をご確認ください。
+        </div>
+        <div class="matome-event-segment ui piled segment" v-for="(eventsOfDate, eventDate) in groupByDate(events)">
+          <div class="ui olive ribbon label">{{ eventDate }}</div>
+          <div class="ui divided very relaxed list">
+            <a class="matome-event-item item" v-for="event in eventsOfDate" v-bind:href="event.url" target="_blank">
+              <div class="matome-event-name">{{ event.name }}</div>
+              <div class="matome-event-meta">{{ event.city }} | {{ event.startTime }} - {{ event.endTime }}</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div v-else class="ui warning message">{{ prefecture }}で開催予定の古本市は、当サイトに登録されていませんでした。</div>
+    </div>
+  </transition>
 
-  <div class="ui relaxed divided large list">
-    <div class="item" v-for="event in events">
-      <div class="content">
-        <a class="header">{{ event.date }} {{ event.startTime }} - {{ event.endTime }}</a>
-        <div class="description">{{ event.name }}</div>
+  <div id="matome-contact-forms">
+    <h4 class="ui header"><i class="edit icon"></i>サイトへの追加や修正を依頼する(準備中)</h4>
+    <div class="ui segment">
+      <div class="ui divided very relaxed list">
+        <a class="item disabled" href="" target="_blank">古本市の情報を追加する</a>
+        <a class="item disabled" href="" target="_blank">登録されている情報を修正・削除する</a>
       </div>
     </div>
   </div>
 </div>
+<footer class="ui basic center aligned inverted segment" style="margin-bottom: 0;">
+  <h5 class="ui header">一箱古本市まとめ</h5>
+  <div class="ui horizontal list">
+    <a class="item" href="/about.html">このサイトについて</a>
+    <!--<a class="item" href="">利用規約</a>-->
+    <!--<a class="item" href="">プライバシーポリシー</a>-->
+    <!--<a class="item" target="_blank" href="">お問い合わせ</a>-->
+    <a class="item" target="_blank" href="http://little-staff.hatenablog.com/">開発者ブログ</a>
+  </div>
+  <br><br><br>
+  <div><small>© 2019 Kanno Masataka</small></div>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-<script src="./events.js"></script>
-<script src="./main.js"></script>
+<script src="/events.js"></script>
+<script src="/main.js"></script>
 </body>
 </html>

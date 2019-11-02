@@ -1,0 +1,50 @@
+body {
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;;
+  background-color: rgb(245, 245, 245);
+}
+header {
+  background-color: white;
+  padding: 2rem 1rem;
+}
+h2.ui.header .sub.header {
+  font-size: 1rem;
+}
+#app {
+  margin: 1rem 1rem 3rem 1rem;
+}
+#matome-prefectures .header {
+  margin-bottom: 0.5rem;
+}
+#matome-contact-forms {
+  margin-top: 5rem;
+}
+#matome-reset {
+  margin-left: 1rem;
+}
+#matome-prefecture-container {
+  margin: 2rem 0;
+}
+.ui.piled.segment.matome-event-segment {
+  margin-top: 2rem;
+}
+.matome-event-item > .matome-event-name {
+  font-weight: 700;
+  font-size: 1.28571429em;
+  margin-top: -.21425em;
+  line-height: 1.28571429em;
+}
+.matome-event-item > .matome-event-meta {
+  color: rgba(0, 0, 0, .68);
+}
+.ui.cards>.ui.matome-event-card>.content>.header {
+  color: #4183c4;
+}
+.ui.ui.button.matome-prefecture {
+  margin-bottom: 1rem;
+}
+.fade-enter-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
