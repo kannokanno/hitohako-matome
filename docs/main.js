@@ -1,5 +1,5 @@
 function previousPrefecture() {
-  return '';
+  return window.localStorage.getItem('previousPrefecture') || '';
 }
 
 new Vue({
@@ -22,6 +22,7 @@ new Vue({
     onPrefecturesChange: function(prefecture) {
       this.prefecture = prefecture;
       this.events = getEvents(prefecture);
+      window.localStorage.setItem('previousPrefecture', prefecture);
     },
     onResetPrefectures: function() {
       this.prefecture = '';
