@@ -10,15 +10,6 @@ function getEvents(prefecture) {
 
 function getAllEvents() {
   return [
-    { prefecture: '山形', city: '東根', name: '一箱古本市＠ひがしね', url: 'https://www.manabiaterrace.jp/event/support-center/一箱古本市＠ひがしね/', date: '11月3日(日)', startTime: '10:00', endTime: '15:00'},
-    { prefecture: '福島', city: '福島', name: '本博 本の博覧会 一箱古本市', url: 'https://twitter.com/InfoHonpak', date: '11月3日(日)', startTime: '10:00', endTime: '15:00'},
-    { prefecture: '東京', city: '荻窪', name: 'ＯＯＥＮ文化祭！プリマ＆一箱古本市', url: 'https://ooen.life', date: '11月3日(日)', startTime: '不明', endTime: '不明'},
-    { prefecture: '千葉', city: '八街', name: '八街市中央公民館 一箱古本市', url: 'https://www.library.yachimata.chiba.jp/toshow/pdf/huruhon.pdf', date: '11月3日(日)', startTime: '10:00', endTime: '16:00'},
-    { prefecture: '栃木', city: '宇都宮', name: 'オリオン☆一箱古本市', url: 'https://orionhthk.exblog.jp/239575811/', date: '11月3日(日)', startTime: '10:30', endTime: '17:00'},
-    { prefecture: '新潟', city: '上越', name: '浄興寺de縁日', url: 'http://www.n-j-p.jp', date: '11月3日(日)', startTime: '10:00', endTime: '16:00'},
-    { prefecture: '京都', city: '北区', name: '佛教大学 古本ひろば・一箱古本市', url: 'https://twitter.com/kenji_do2012/status/1177931790318587909', date: '11月3日(日)', startTime: '12:00', endTime: '16:00'},
-    { prefecture: '福岡', city: '直方', name: '第２回 のおがた一箱古本市', url: 'http://www.yumenity.jp/library/event/furuhonichi2019.pdf', date: '11月3日(日)', startTime: '10:00', endTime: '15:00'},
-    { prefecture: '福岡', city: '福岡', name: 'ブックオカ けやき通り・のきさき古本市', url: 'http://bookuoka.com/archives/2866', date: '11月3日(日)', startTime: '11:00', endTime: '16:00'},
     { prefecture: '千葉', city: '千葉みなと', name: '第２回千葉みなと 一箱古本市', url: 'https://docs.google.com/forms/d/1OXZDIp--EBxs1XX6LNmkwkMC0gM_Ba8AUtz62HulYqk/viewform?chromeless=1&edit_requested=true', date: '11月4日(月)', startTime: '10:00', endTime: '15:30'},
     { prefecture: '静岡', city: '三島', name: 'コーヒーとめがね+本', url: 'https://www.facebook.com/events/%E4%B8%89%E5%B3%B6%E5%B8%82%E7%AB%8B%E5%85%AC%E5%9C%92%E6%A5%BD%E5%AF%BF%E5%9C%92/%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%81%A8%E3%82%81%E3%81%8C%E3%81%AD%E6%9C%AC/2317702041873442/', date: '11月4日(月)', startTime: '10:00', endTime: '16:00'},
     { prefecture: '東京', city: '田原町', name: 'お座敷一箱古本市', url: 'http://readinwritin.net/2018/11/22/%e3%81%8a%e5%ba%a7%e6%95%b7%e4%b8%80%e7%ae%b1%e5%8f%a4%e6%9c%ac%e5%b8%82-2/', date: '11月9日(土)', startTime: '12:00', endTime: '18:00'},
