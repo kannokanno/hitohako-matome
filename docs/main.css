@@ -15,8 +15,10 @@ h2.ui.header .sub.header {
 #matome-prefectures .header {
   margin-bottom: 0.5rem;
 }
-#matome-contact-forms {
-  margin-top: 5rem;
+#matome-contact-forms, #matome-about {
+  margin-top: 3rem;
+}
+#matome-about {
 }
 #matome-reset {
   margin-left: 1rem;
