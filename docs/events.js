@@ -10,6 +10,6 @@ function getEvents(prefecture) {
 
 function getAllEvents() {
   return [
-    // { prefecture: '', city: '', name: '', url: '', date: '', startTime: '', endTime: ''},
+    // { prefecture: '', city: '', name: '', message: '', url: '', date: '', startTime: '', endTime: ''},
   ];
 }

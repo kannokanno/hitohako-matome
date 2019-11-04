@@ -1,5 +1,6 @@
 body {
-  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;;
+  font-family: 'Hiragino Sans','Helvetica Neue',Avenir,"Open Sans",Helvetica,Arial,Verdana,Roboto,"游ゴシック","Yu Gothic","游ゴシック体",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","Meiryo UI","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;;
+  font-weight: 300;
   background-color: rgb(245, 245, 245);
 }
 header.ui.segment {
@@ -15,10 +16,11 @@ h2.ui.header .sub.header {
 #matome-prefectures .header {
   margin-bottom: 0.5rem;
 }
-#matome-contact-forms, #matome-about {
-  margin-top: 3rem;
-}
 #matome-about {
+  margin-top: 2rem;
+}
+#matome-contact-forms, #matome-manager {
+  margin-top: 3rem;
 }
 #matome-reset {
   margin-left: 1rem;
@@ -36,7 +38,13 @@ h2.ui.header .sub.header {
   line-height: 1.28571429em;
 }
 .matome-event-item > .matome-event-meta {
-  color: rgba(0, 0, 0, .68);
+  color: rgba(76, 76, 76, 0.68);
+}
+.matome-event-message {
+  font-size: .9375rem;
+  color: #333;
+  line-height: 1.8;
+  margin-top: 10px;
 }
 .ui.cards>.ui.matome-event-card>.content>.header {
   color: #4183c4;

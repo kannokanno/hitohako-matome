@@ -31,7 +31,7 @@
   <link rel="stylesheet" type="text/css" href="./main.css">
 </head>
 <body>
-<header class="ui raise segment">
+<header class="ui raise olive segment">
   <h2 class="ui header">
     <img src="./logo.png" class="ui image">
     <div class="content">
@@ -40,7 +40,18 @@
     </div>
   </h2>
 </header>
-<div id="app">
+<div id="app" class="ui container">
+  <div id="matome-about">
+    <h4 class="ui header"><i class="question circle outline icon"></i>ヒトハコまとめとは</h4>
+    <div class="ui segment">
+      <p>「ヒトハコまとめ」は全国各地で行われる一箱古本市のまとめサイトです。</p>
+      <p>近年では一箱古本市が増えていますが、いつどこでどんな古本市が開催されているかを簡単に知ることはなかなか出来ません。気付いたら終わっていたということもあります。</p>
+      <p>こうした見落としを防ぎ、出店希望者やお客様が今よりも簡単に知ることができればと、イベントの公式リンクまとめを作成しました。</p>
+      <p>当サイトが盛り上がることで、主催側のイベント告知にも貢献できたらと考えています。</p>
+      <p>現在は主催側からご依頼頂いた場合のみ、データを追加する仕様となっております。ご希望の主催者さまは、以下のリンク先より申請をお願い致します。</p>
+      <a class="item" href="https://docs.google.com/forms/d/e/1FAIpQLSfZsV8kCWh8J6y23jR6zRJXLBRW7eolTGFMrAjG0ZkWuifSZw/viewform" target="_blank" style="font-size: 1.2em;">一箱古本市の掲載を追加する</a>
+    </div>
+  </div>
   <div id="matome-prefecture-container">
     <div v-if="isCollapsePrefecture">
       <div class="ui olive segment">
@@ -52,7 +63,7 @@
       <h4><i class="search olive icon"></i>調べたい開催地を選択してください</h4>
       <div id="matome-prefectures" class="ui massive list">
         <div class="item">
-          <h3 class="header">絞り込みなし(全国)</h3>
+          <h3 class="header">絞り込みなし</h3>
           <div class="description ui four buttons">
             <button class="ui blue button matome-prefecture" v-bind:class="prefectureActiveClass('全国')" @click="onPrefecturesChange('全国')">全国</button>
           </div>
@@ -81,6 +92,7 @@
             <a class="matome-event-item item" v-for="event in eventsOfDate" v-bind:href="event.url" target="_blank">
               <div class="matome-event-name">{{ event.name }}</div>
               <div class="matome-event-meta">{{ event.prefecture }} | {{ event.city }} | {{ event.startTime }} - {{ event.endTime }}</div>
+              <div v-if="event.message !== ''" class="matome-event-message">{{ event.message }}</div>
             </a>
           </div>
         </div>
@@ -100,19 +112,11 @@
     </div>
   </div>
 
-  <div id="matome-about">
-    <h4 class="ui header"><i class="question circle outline icon"></i>このサイトについて</h4>
-    <div class="ui segment">
-      <p>「ヒトハコまとめ」は全国各地で行われる一箱古本市のまとめサイトです。</p>
-      <p>近年では一箱古本市が増えていますが、いつどこでどんな古本市が開催されているかを簡単に知ることはなかなか出来ません。気付いたら終わっていたということもあります。</p>
-      <p>こうした見落としを防ぎ、出店希望者やお客様が今よりも簡単に知ることができればと、イベントの公式リンクまとめを作成しました。</p>
-      <p>当サイトが盛り上がることで、主催側のイベント告知にも貢献できたらと考えています。</p>
-      <p>管理者1人の手で全てを網羅するのは至難のため、ぜひ主催者様や情報をご存知の方から掲載の追加依頼を出して頂けると幸いです。</p>
-    </div>
+  <div id="matome-manager">
     <h4 class="ui header"><i class="user circle outline icon"></i>運営元について</h4>
     <div class="ui segment">
       <p>このサイトは、リトルスタッフという「月々300円から本屋を応援したり、紹介された本の取置き予約ができる」サービスの開発者が1人で運営しています。</p>
-      <p>よろしければリトルスタッフの方もご覧ください。<a href="https://www.littlestaff.jp" target="_blank">https://www.littlestaff.jp</a></p>
+      <p>よろしければリトルスタッフもご覧ください。<a href="https://www.littlestaff.jp" target="_blank">https://www.littlestaff.jp</a></p>
     </div>
   </div>
 </div>
